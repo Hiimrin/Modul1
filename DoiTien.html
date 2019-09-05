@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table style="width:90%">
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <th> <input type="number" id="moneyinput" name="Amount" placeholder="amount of money">  </th>
+        <th>
+                <select id="FromCurrency">
+                    <option value="1">VND</option>
+                    <option value="23000">USD</option>
+                </select>
+        </th>
+        <th>
+                <select id="ToCurrency">
+                    <option value="1">VND</option>
+                    <option value="23000">USD</option>
+                </select>
+        </th>
+        <th>
+            <button type="button" id="button" onclick="Swap()" >Convert </button>
+        </th>
+    </tr>
+</table><p></p>
+<p id="Convertedmoney"></p>
+
+<script>
+    function Swap(){
+        let Formula = parseInt(document.getElementById("moneyinput").value) * parseInt(document.getElementById("FromCurrency").value) / parseInt(document.getElementById("ToCurrency").value);
+        let RoundedResult = Formula.toFixed(2);
+        let bluecolor= "Result "+RoundedResult;
+        let outputmsg= bluecolor.fontcolor("blue");
+        document.getElementById("Convertedmoney").innerHTML = outputmsg;
+    }
+</script>
+</body>
+</html>
